@@ -8,6 +8,11 @@ class Block
         this.data = data;
     }
 
+    static get genesis(){
+        const timestamp = (new Date(2019, 0, 1)). getTime();
+        return new this(timestamp, undefined, 'g3n3sis-h4sh', 'g3n3s1s-d4t4');
+    }
+    
     toString()
     {
         const 
