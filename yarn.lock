@@ -1333,10 +1333,20 @@ cross-spawn@^7.0.2:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
+crypto-js@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/crypto-js/-/crypto-js-4.1.1.tgz#9e485bcf03521041bd85844786b83fb7619736cf"
+  integrity sha512-o2JlM7ydqd3Qk9CA0L4NL6mTzU2sdx96a+oOfPu8Mkl/PK51vSyoi8/rQ8NknZtk44vq15lmhAj9CIAGwgeWKw==
+
 crypto-random-string@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/crypto-random-string/-/crypto-random-string-2.0.0.tgz#ef2a7a966ec11083388369baa02ebead229b30d5"
   integrity sha512-v1plID3y9r/lPhviJ1wrXpLeyUIGAZ2SHNYTEapm7/8A9nLPoyvVp3RK/EPFqn5kEznyWgYZNsRtYYIWbuG8KA==
+
+crypto.js@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/crypto.js/-/crypto.js-2.0.5.tgz#2bb707739d35b4a77675ca90f7bb72969e786f6a"
+  integrity sha512-ZCBe4d4Yvs/TqPgzc9tIy2FhAFJ+gK5a8eteFGCeaNW9DNHmzB8cBty7i+CBpZloi89DXJ5Vx+NHFEFrz6XUQg==
 
 debug@^2.2.0, debug@^2.6.9:
   version "2.6.9"
