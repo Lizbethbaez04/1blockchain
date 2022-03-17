@@ -1,41 +1,42 @@
-import Blockchain from "../blockchain";
-import validate from "./validate";
+import Blockchain from '../blockchain';
+import validate from './validate';
 
-describe('validate()', () =>{
+describe('validate()', ()=>{
     let blockchain;
 
-    beforeEach(() =>{
+    beforeEach(()=>{
         blockchain = new Blockchain();
     });
-    it('Validar cadena valida', () => {
-        blockchain.addBlock('bl0ck-1');
-        blockchain.addBlock('bl0ck-2');
+
+    it('Crear cadena valida', ()=>{
+        blockchain.addBlock('transact0');
+        blockchain.addBlock('transact1');
 
         expect(validate(blockchain.blocks)).toBe(true);
     });
 
-    it('Invalidar la cadena con un genesis block corrputo', () =>{
+    it('Invalidando cadena con un genesis block corrupto', ()=>{
         blockchain.blocks[0].data = 'h4ck-data';
 
-        expect(() =>{
+        expect(()=>{
             validate(blockchain.blocks);
-        }).toThrowError('Genesis block invalido');
+        }).toThrowError('Bloque Genesis Invalido');
     });
 
-    it('invalidar cadena con previousHash corrupto en un bloque', () =>{
-        blockchain.addBlock('bl0ck-1');
-        blockchain.blocks[1].previousHash = 'h4ck-previoushash';
+    it('Invalidando una cadena con un previousHash corrupto en un block', ()=>{
+        blockchain.addBlock('transact2');
+        blockchain.blocks[1].previousHash = 'h4ck-previousHash';
 
-        expect(() =>{
+        expect(()=>{
             validate(blockchain.blocks);
-        }).toThrowError('PreviousHash invalido');
+        }).toThrowError('El Previous hash es invalido');
     });
 
-    it('invalidar cadena con Hash corrupto en un bloque', () =>{
-        blockchain.addBlock('bl0ck-1');
+    it('Invalidando una cadena con un block con hash corrupto', ()=>{
+        blockchain.addBlock('transact3');
         blockchain.blocks[1].hash = 'h4ck-hash';
 
-        expect(() =>{
+        expect(()=>{
             validate(blockchain.blocks);
         }).toThrowError('Hash invalido');
     });
